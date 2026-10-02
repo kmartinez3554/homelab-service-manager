@@ -1,0 +1,25 @@
+<h1>Homelab Service Manager</h1>
+
+<h2>Services</h2>
+
+{% for service in services %}
+    <p>Name: {{ service.name }}</p>
+
+    {% if service.description %}
+        <p>Description: {{ service.description }}</p>
+    {% endif %}
+
+    <p>Host: {{ service.host }}</p>
+    <p>Port: {{ service.port }}</p>
+
+    {% if service.url %}
+        <p>URL: {{ service.url }}</p>
+    {% endif %}
+
+    <p>Service Type: {{ service.service_type }}</p>
+
+{% empty %}
+
+    <p>No services have been added yet.</p>
+
+{% endfor %}
